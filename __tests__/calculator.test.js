@@ -83,12 +83,30 @@ describe('earthLifeExp', () => {
   test('should return 12 when run on object with .diet === "carnivore"', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 0;
-    testGlabba.combs = "carnivore";
+    testGlabba.diet = "carnivore";
     testGlabba.earthLifeExp();
     expect(testGlabba.earthLE).toEqual(12);
   });
 
+  test('should return 18 when run on object with .diet === "vegetarian"', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 0;
+    testGlabba.diet = "vegetarian";
+    testGlabba.earthLifeExp();
+    expect(testGlabba.earthLE).toEqual(18);
+  });
+
 });
 
+describe('yrsToDays', () => {
+
+  test('should return 365 when run on object with .earthAge === 1', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 1;
+    const testAgeInDays = testGlabba.yrsToDays();
+    expect(testAgeInDays).toEqual(365);
+  });
+
+});
 
 // git add __tests__/calculator.test.js src/calculator.js
