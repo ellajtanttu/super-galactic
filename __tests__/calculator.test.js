@@ -151,7 +151,18 @@ describe('mars', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 1;
     const marsAge = testGlabba.mars();
-    expect(marsAge).toEqual(1.62);
+    expect(marsAge).toEqual(.53);
+  });
+
+});
+
+describe('jupiter', () => {
+
+  test('should return .08 when run on object with .earthAge === 1', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 1;
+    const jupAge = testGlabba.jupiter();
+    expect(jupAge).toEqual(.08);
   });
 
 });
