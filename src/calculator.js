@@ -37,26 +37,16 @@ GlabbaData.prototype.earthLifeExp = function() {
     calcLifeExp += 0;
   }
 
+  if (this.diet === "carnivore") {
+    calcLifeExp += 12;
+  } else {
+    calcLifeExp += 0;
+  }
+
   return this.earthLE += calcLifeExp;
 }
 
-/* 
-  function earthLE() {
-        let lifeExp = 0;
-        if (type === bloogblag) {
-              life exp += 67
-        } else if (type === magmoog) {
-              life exp += 83
-        } else {
-              life exp += 75
-        }
-
-        if (inhaleComp === true) {
-              lifeExp -= 20;
-        } else {
-              lifeExp -= o;
-        }
-
+/*
         if (diet === "carnivore) {
               lifeExp += 12;
         } else {
