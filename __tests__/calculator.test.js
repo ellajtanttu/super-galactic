@@ -72,6 +72,14 @@ describe('earthLifeExp', () => {
     expect(testGlabba.earthLE).toEqual(-20);
   });
 
+  test('should return 5 when run on object with .combs === false', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 0;
+    testGlabba.combs = false;
+    testGlabba.earthLifeExp();
+    expect(testGlabba.earthLE).toEqual(5);
+  });
+
 });
 
 
