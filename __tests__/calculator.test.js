@@ -107,6 +107,13 @@ describe('yrsToDays', () => {
     expect(testAgeInDays).toEqual(365);
   });
 
+  test('should return 1460 when run on object with .earthAge === 4', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 4;
+    const testAgeInDays = testGlabba.yrsToDays();
+    expect(testAgeInDays).toEqual(1460);
+  });
+
 });
 
 // git add __tests__/calculator.test.js src/calculator.js
