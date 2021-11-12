@@ -29,3 +29,12 @@ describe('GlabbaData', () => {
     expect(testGlabba.jupData).toEqual([0,0]);
   });
 });
+
+
+describe('earthLifeExp', () => {
+
+  test('should return 0 when run on object', () => {
+    const testGlabba = new GlabbaData();
+    expect(testGlabba.earthLE).toEqual(0);
+  });
+});
