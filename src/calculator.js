@@ -48,12 +48,10 @@ GlabbaData.prototype.earthLifeExp = function() {
   return this.earthLE += calcLifeExp;
 }
 
-/*
-        if (diet === "carnivore) {
-              lifeExp += 12;
-        } else {
-              lifeExp += 18;
-        }
-        return lifeExp;
-  }
-*/
+GlabbaData.prototype.yrsToDays = function() {
+  if (this.earthAge > 0) {
+    return this.earthAge * 365;
+  } else {
+    return "age not set"
+  } 
+}
