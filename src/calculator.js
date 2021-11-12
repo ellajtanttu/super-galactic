@@ -21,6 +21,8 @@ GlabbaData.prototype.earthLifeExp = function() {
   let calcLifeExp = 0;
   if (this.type === "bloogblag") {
     calcLifeExp += 67;
+  } else if (this.type === "magmoog") {
+    calcLifeExp += 83;
   } else {
     calcLifeExp += 0;
   }
