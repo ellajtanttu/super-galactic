@@ -80,6 +80,14 @@ describe('earthLifeExp', () => {
     expect(testGlabba.earthLE).toEqual(5);
   });
 
+  test('should return 12 when run on object with .diet === "carnivore"', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 0;
+    testGlabba.combs = "carnivore";
+    testGlabba.earthLifeExp();
+    expect(testGlabba.earthLE).toEqual(12);
+  });
+
 });
 
 
