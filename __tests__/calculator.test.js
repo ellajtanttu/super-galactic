@@ -134,14 +134,14 @@ describe('mercury', () => {
 
 });
 
-// describe('venus', () => {
+describe('venus', () => {
 
-//   test('should return 4 when run on object with .earthAge === 1', () => {
-//     const testGlabba = new GlabbaData();
-//     testGlabba.earthAge = 1;
-//     const mercuryAge = testGlabba.mercury();
-//     expect(mercuryAge).toEqual(4);
-//   });
+  test('should return 1.62 when run on object with .earthAge === 1', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 1;
+    const venusAge = testGlabba.venus();
+    expect(venusAge).toEqual(1.62);
+  });
 
-// });
+});
 
