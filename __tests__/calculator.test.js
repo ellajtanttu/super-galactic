@@ -145,3 +145,14 @@ describe('venus', () => {
 
 });
 
+describe('mars', () => {
+
+  test('should return .53 when run on object with .earthAge === 1', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 1;
+    const marsAge = testGlabba.mars();
+    expect(marsAge).toEqual(1.62);
+  });
+
+});
+
