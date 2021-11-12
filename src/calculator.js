@@ -62,5 +62,11 @@ GlabbaData.prototype.mercury = function () {
   return parseFloat(mercConv.toFixed(2));
 }
 
+GlabbaData.prototype.venus = function () {
+  const earthDays = this.yrsToDays();
+  const venConv = parseFloat(earthDays / 225);
+  return parseFloat(venConv.toFixed(2));
+}
+
 
 // git add __tests__/calculator.test.js src/calculator.js
