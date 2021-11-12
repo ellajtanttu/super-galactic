@@ -11,7 +11,7 @@
 
 // expect(monster1.level).toBeDefined();
 
-import {GlabbaData} from './../src/calculator.js'; // object
+import {GlabbaData, yrsToDays} from './../src/calculator.js'; // object
 
 describe('GlabbaData', () => {
 
@@ -173,7 +173,7 @@ describe('lifeExp', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     const mercLifeExp = testGlabba.lifeExp();
-    expect(mercLifeExp).toEqual(269.6);
+    expect(mercLifeExp).toEqual(269.60);
   });
 
 });

@@ -48,11 +48,19 @@ GlabbaData.prototype.earthLifeExp = function() {
   return this.earthLE += calcLifeExp;
 }
 
-GlabbaData.prototype.yrsToDays = function() {
-  if (this.earthAge > 0) {
-    return this.earthAge * 365;
+// GlabbaData.prototype.yrsToDays = function() {
+//   if (this.earthAge > 0) {
+//     return this.earthAge * 365;
+//   } else {
+//     return "age not set"
+//   } 
+// }
+
+export function yrsToDays(number) {
+  if (number > 0) {
+    return number * 365;
   } else {
-    return "age not set"
+    return "number not set"
   } 
 }
 
@@ -78,6 +86,13 @@ GlabbaData.prototype.jupiter = function () {
   const earthDays = this.yrsToDays();
   const jupConv = parseFloat(earthDays / 4333);
   return parseFloat(jupConv.toFixed(2));
+}
+
+GlabbaData.prototype.lifeExp = function () {
+  const earthLEYears = this.earthLE
+  const earthLEDays = earthLEYears.yrsToDays();
+  const mercExpectancy = parseFloat(earthLEDays / 88);
+  return parseFloat(mercExpectancy.toFixed(2));
 }
 
 
