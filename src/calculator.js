@@ -23,6 +23,8 @@ GlabbaData.prototype.earthLifeExp = function() {
     calcLifeExp += 67;
   } else if (this.type === "magmoog") {
     calcLifeExp += 83;
+  } else if (this.type === "magblag") {
+    calcLifeExp += 75;
   } else {
     calcLifeExp += 0;
   }
