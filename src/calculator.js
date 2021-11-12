@@ -31,6 +31,8 @@ GlabbaData.prototype.earthLifeExp = function() {
 
   if (this.combs === true) {
     calcLifeExp -= 20;
+  } else if (this.combs === false) {
+    calcLifeExp += 5;
   } else {
     calcLifeExp += 0;
   }
