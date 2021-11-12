@@ -18,12 +18,12 @@ export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercData,
 }
 
 GlabbaData.prototype.earthLifeExp = function() {
-  let calcLifeExp = 1;
-  // if (type === bloogblag) {
-  //   lifeExp += 67;
-  // } else {
-  //   lifeExp += 75;
-  // }
+  let calcLifeExp = 0;
+  if (this.type === "bloogblag") {
+    calcLifeExp += 67;
+  } else {
+    calcLifeExp += 0;
+  }
   return this.earthLE += calcLifeExp;
 }
 

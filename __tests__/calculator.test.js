@@ -33,11 +33,11 @@ describe('GlabbaData', () => {
 
 describe('earthLifeExp', () => {
 
-  test('should return 1 when run on object', () => {
+  test('should return 0 when run on object', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 0;
     testGlabba.earthLifeExp();
-    expect(testGlabba.earthLE).toEqual(1);
+    expect(testGlabba.earthLE).toEqual(0);
   });
   
   test('should return 67 when run on object with .type === "bloogblag"', () => {
