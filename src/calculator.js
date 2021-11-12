@@ -59,7 +59,7 @@ GlabbaData.prototype.yrsToDays = function() {
 GlabbaData.prototype.mercury = function () {
   const earthDays = this.yrsToDays();
   const mercConv = parseFloat(earthDays / 88);
-  return parseFloat(mercConv.toFixed(0));
+  return parseFloat(mercConv.toFixed(2));
 }
 
 

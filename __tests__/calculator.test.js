@@ -125,11 +125,23 @@ describe('yrsToDays', () => {
 
 describe('mercury', () => {
 
-  test('should return 4 when run on object with .earthAge === 1', () => {
+  test('should return 4.15 when run on object with .earthAge === 1', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 1;
     const mercuryAge = testGlabba.mercury();
-    expect(mercuryAge).toEqual(4);
+    expect(mercuryAge).toEqual(4.15);
   });
 
 });
+
+// describe('venus', () => {
+
+//   test('should return 4 when run on object with .earthAge === 1', () => {
+//     const testGlabba = new GlabbaData();
+//     testGlabba.earthAge = 1;
+//     const mercuryAge = testGlabba.mercury();
+//     expect(mercuryAge).toEqual(4);
+//   });
+
+// });
+
