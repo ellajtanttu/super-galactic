@@ -48,4 +48,15 @@ describe('earthLifeExp', () => {
     expect(testGlabba.earthLE).toEqual(67);
   });
 
+  test('should return 83 when run on object with .type === "magmoog"', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 0;
+    testGlabba.type = "magmoog";
+    testGlabba.earthLifeExp();
+    expect(testGlabba.earthLE).toEqual(83);
+  });
+
 });
+
+
+// git add __tests__/calculator.test.js src/calculator.js
