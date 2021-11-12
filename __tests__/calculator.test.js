@@ -56,6 +56,14 @@ describe('earthLifeExp', () => {
     expect(testGlabba.earthLE).toEqual(83);
   });
 
+  test('should return 75 when run on object with .type === "magblag"', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 0;
+    testGlabba.type = "magblag";
+    testGlabba.earthLifeExp();
+    expect(testGlabba.earthLE).toEqual(75);
+  });
+
 });
 
 
