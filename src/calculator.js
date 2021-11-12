@@ -28,6 +28,13 @@ GlabbaData.prototype.earthLifeExp = function() {
   } else {
     calcLifeExp += 0;
   }
+
+  if (this.combs === true) {
+    calcLifeExp -= 20;
+  } else {
+    calcLifeExp += 0;
+  }
+
   return this.earthLE += calcLifeExp;
 }
 
