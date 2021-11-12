@@ -39,9 +39,11 @@ GlabbaData.prototype.earthLifeExp = function() {
 
   if (this.diet === "carnivore") {
     calcLifeExp += 12;
+  } else if (this.diet === "vegetarian") {
+    calcLifeExp += 18;
   } else {
     calcLifeExp += 0;
-  }
+  } 
 
   return this.earthLE += calcLifeExp;
 }
