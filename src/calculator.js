@@ -68,5 +68,11 @@ GlabbaData.prototype.venus = function () {
   return parseFloat(venConv.toFixed(2));
 }
 
+GlabbaData.prototype.mars = function () {
+  const earthDays = this.yrsToDays();
+  const marsConv = parseFloat(earthDays / 687);
+  return parseFloat(marsConv.toFixed(2));
+}
+
 
 // git add __tests__/calculator.test.js src/calculator.js
