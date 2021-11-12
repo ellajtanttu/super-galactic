@@ -167,3 +167,14 @@ describe('jupiter', () => {
 
 });
 
+describe('lifeExp', () => {
+
+  test('should return mercury life exp of 269.6 when run on object with .earthAge of 65', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 65;
+    const mercLifeExp = testGlabba.lifeExp();
+    expect(mercLifeExp).toEqual(269.6);
+  });
+
+});
+
