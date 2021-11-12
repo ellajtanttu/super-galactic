@@ -88,11 +88,11 @@ X 1. method for life expecency on earth\
 3. Venus age/LE calculator function\
 4. Mars age/LE calculator function\
 5. Jupiter age/LE calculator function -->
-X 2. Mercury day to year conversion function
-X 3. Venus day to year conversion function
-X 4. Mars day to year conversion function
-X 5. Jupiter day to year conversion function
-6. Life Expectency conversion function (for all planets?)
+X 2. Mercury day to year conversion function\
+X 3. Venus day to year conversion function\
+X 4. Mars day to year conversion function\
+X 5. Jupiter day to year conversion function\
+6. Life Expectency conversion function (for all planets?)\
 7. User Object:
       Name: ""
       Earth Age: #
@@ -210,3 +210,7 @@ herbivore - (+18)
             this.marsData: marsData;
             this.jupData: jupData;
       }
+
+WIP: Changing methods to functions for repeatable formulas (years to days and the planet conversions)
+
+we'll need to make a main prototype that will add all the values to the object. 

@@ -101,24 +101,21 @@ describe('earthLifeExp', () => {
 describe('yrsToDays', () => {
 
   test('should return 365 when run on object with .earthAge === 1', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 1;
-    const testAgeInDays = testGlabba.yrsToDays();
+    let testAge = 1;
+    const testAgeInDays = yrsToDays(testAge);
     expect(testAgeInDays).toEqual(365);
   });
 
   test('should return 1460 when run on object with .earthAge === 4', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 4;
-    const testAgeInDays = testGlabba.yrsToDays();
+    let testAge = 4;
+    const testAgeInDays = yrsToDays(testAge);
     expect(testAgeInDays).toEqual(1460);
   });
 
   test('should return "age not set" when run on object with .earthAge === 0', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 0;
-    const testAgeInDays = testGlabba.yrsToDays();
-    expect(testAgeInDays).toEqual("age not set");
+    let testAge = 0;
+    const testAgeInDays = yrsToDays(testAge);
+    expect(testAgeInDays).toEqual("number not set");
   });
 
 });

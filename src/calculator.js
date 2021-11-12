@@ -3,6 +3,13 @@
 //     this.number = 3;
 //   }
 // }
+export function yrsToDays(number) {
+  if (number > 0) {
+    return number * 365;
+  } else {
+    return "number not set"
+  } 
+}
 
 export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercData, venData, marsData, jupData) {
   this.name = name;
@@ -56,16 +63,9 @@ GlabbaData.prototype.earthLifeExp = function() {
 //   } 
 // }
 
-export function yrsToDays(number) {
-  if (number > 0) {
-    return number * 365;
-  } else {
-    return "number not set"
-  } 
-}
 
 GlabbaData.prototype.mercury = function () {
-  const earthDays = this.yrsToDays();
+  const earthDays = yrsToDays(this);
   const mercConv = parseFloat(earthDays / 88);
   return parseFloat(mercConv.toFixed(2));
 }
