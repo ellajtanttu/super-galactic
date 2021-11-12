@@ -55,3 +55,12 @@ GlabbaData.prototype.yrsToDays = function() {
     return "age not set"
   } 
 }
+
+GlabbaData.prototype.mercury = function () {
+  const earthDays = this.yrsToDays();
+  const mercConv = parseFloat(earthDays / 88);
+  return parseFloat(mercConv.toFixed(0));
+}
+
+
+// git add __tests__/calculator.test.js src/calculator.js
