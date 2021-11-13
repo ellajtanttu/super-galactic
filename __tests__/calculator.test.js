@@ -15,18 +15,22 @@ import {GlabbaData, yrsToDays, mercury, venus, mars, jupiter} from './../src/cal
 
 describe('GlabbaData', () => {
 
-  test('should correctly create a GlabbaData object with ten keys', () => {
-    const testGlabba = new GlabbaData("Gloopdoop", 26, "Magblag", true, "herbivore", 0, [0,0], [0,0], [0,0], [0,0]);
-    expect(testGlabba.name).toEqual("Gloopdoop");
-    expect(testGlabba.earthAge).toEqual(26);
-    expect(testGlabba.type).toEqual("Magblag");
-    expect(testGlabba.combs).toEqual(true);
-    expect(testGlabba.diet).toEqual("herbivore");
-    expect(testGlabba.earthLE).toEqual(0);
-    expect(testGlabba.mercData).toEqual([0,0]);
-    expect(testGlabba.venData).toEqual([0,0]);
-    expect(testGlabba.marsData).toEqual([0,0]);
-    expect(testGlabba.jupData).toEqual([0,0]);
+  test('should correctly create a GlabbaData object with fourteen keys', () => {
+    const testGlabba = new GlabbaData("Gloopdoop", 26, "Magblag", true, "herbivore", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+      expect(testGlabba.name).toEqual("Gloopdoop");
+      expect(testGlabba.earthAge).toEqual(26);
+      expect(testGlabba.type).toEqual("Magblag");
+      expect(testGlabba.combs).toEqual(true);
+      expect(testGlabba.diet).toEqual("herbivore");
+      expect(testGlabba.earthLE).toEqual(0);
+      expect(testGlabba.mercAge).toEqual(0);
+      expect(testGlabba.venAge).toEqual(0);
+      expect(testGlabba.marsAge).toEqual(0);
+      expect(testGlabba.jupAge).toEqual(0);
+      expect(testGlabba.mercLE).toEqual(0);
+      expect(testGlabba.venLE).toEqual(0);
+      expect(testGlabba.marsLE).toEqual(0);
+      expect(testGlabba.jupLE).toEqual(0);
   });
 });
 
@@ -162,39 +166,41 @@ describe('jupiter', () => {
 
 describe('ageCalc', () => {
 
-  test('should set object merData to [269.6] when run on earth age of 65', () => {
+  test('should set object merData to 269.6 when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
-    expect(testGlabba.mercData).toEqual([269.6]);
+    expect(testGlabba.mercAge).toEqual(269.6);
   });
 
-  test('should set object venData to [105.44] when run on earth age of 65', () => {
+  test('should set object venData to 105.44 when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
-    expect(testGlabba.venData).toEqual([105.44]);
+    expect(testGlabba.venAge).toEqual(105.44);
   });
 
-  test('should set object marsData to [34.53] when run on earth age of 65', () => {
+  test('should set object marsData to 34.53 when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
-    expect(testGlabba.marsData).toEqual([34.53]);
+    expect(testGlabba.marsAge).toEqual(34.53);
   });
 
-  test('should set object jupData to [5.48] when run on earth age of 65', () => {
+  test('should set object jupData to 5.48 when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
-    expect(testGlabba.jupData).toEqual([5.48]);
+    expect(testGlabba.jupAge).toEqual(5.48);
   });
 
+});
+
+describe('lECalc', () => {
   test('should add merc life exp to mercData [331.82] when earth expectency is 80', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 80;
-    testGlabba.lifeExp();
-    expect(testGlabba.mercData).toEqual([331.82]);
+    testGlabba.lECalc();
+    expect(testGlabba.mercLE).toEqual(331.82);
   });
-
 });
