@@ -169,18 +169,25 @@ describe('ageCalc', () => {
     expect(testGlabba.mercData).toEqual([269.6]);
   });
 
-  test('should set object merData to [105.44] when run on earth age of 65', () => {
+  test('should set object venData to [105.44] when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
     expect(testGlabba.venData).toEqual([105.44]);
   });
 
-  test('should set object merData to [34.53] when run on earth age of 65', () => {
+  test('should set object marsData to [34.53] when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
     testGlabba.ageCalc();
-    expect(testGlabba.marsData).toEqual([35.53]);
+    expect(testGlabba.marsData).toEqual([34.53]);
+  });
+
+  test('should set object jupData to [5.48] when run on earth age of 65', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 65;
+    testGlabba.ageCalc();
+    expect(testGlabba.jupData).toEqual([5.48]);
   });
 
 });
