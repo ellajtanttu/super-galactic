@@ -84,10 +84,11 @@ GlabbaData.prototype.ageCalc = function () {
   this.mercData = [];
   this.venData = [];
   this.marsData = [];
-  // this.jupData = [];
+  this.jupData = [];
   this.mercData.push(mercury(age));
   this.venData.push(venus(age));
   this.marsData.push(mars(age));
+  this.jupData.push(jupiter(age));
 
   // this.venData.push(venus(ageDays));
   // this.marsData.push(mars(ageDays));
