@@ -30,7 +30,7 @@ export function jupiter(number) {
   return parseFloat(jupConv.toFixed(2));
 }
 
-export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercAge, venAge, marsAge, jupAge, mercLE, venLE, marsLE, jupLE) {
+export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercAge, venAge, marsAge, jupAge, mercLE, venLE, marsLE, jupLE, over) {
   this.name = name;
   this.earthAge = earthAge;
   this.type = type;
@@ -45,6 +45,7 @@ export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercAge, 
   this.venLE = venLE;
   this.marsLE = marsLE;
   this.jupLE = jupLE;
+  this.over = over;
 }
 
 GlabbaData.prototype.earthLifeExp = function() {
@@ -91,6 +92,7 @@ GlabbaData.prototype.ageCalc = function () {
 }
 
 GlabbaData.prototype.lECalc = function () {
+  this.over = false;
   this.mercLE = 0;
   this.venLE = 0;
   this.marsLE = 0;
@@ -100,6 +102,13 @@ GlabbaData.prototype.lECalc = function () {
   this.venLE = parseFloat((venus(lifeExp) - this.venAge).toFixed(2));
   this.marsLE = parseFloat((mars(lifeExp) - this.marsAge).toFixed(2));
   this.jupLE = parseFloat((jupiter(lifeExp) - this.jupAge).toFixed(2));
+}
+
+GlabbaData.prototype.negative = function() {
+  if (this.mercLE < 0) {
+    this.over = true;
+    return Math.abs(this.mercLE);
+  }
 }
 
 //git add __tests__/calculator.test.js
