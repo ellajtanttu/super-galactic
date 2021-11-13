@@ -165,8 +165,9 @@ describe('ageCalc', () => {
   test('should set object merData to [269.6] when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
-    const mercAge = testGlabba.mercData();
-    expect(mercAge).toEqual([269.60]);
+    testGlabba.ageCalc();
+    // const mercAge = testGlabba.mercData;
+    expect(testGlabba.mercData).toEqual([269.6]);
   });
 
 });
