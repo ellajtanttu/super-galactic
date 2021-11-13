@@ -81,11 +81,12 @@ GlabbaData.prototype.earthLifeExp = function() {
 
 GlabbaData.prototype.ageCalc = function () {
   const age = this.earthAge;
-  // making a variable set to 65yrs in days
   this.mercData = [];
-  // setting the mercdada prop to an array
+  this.venData = [];
+  // this.marsData = [];
+  // this.jupData = [];
   this.mercData.push(mercury(age));
-  // adding mercury age to mercdata;
+  this.venData.push(venus(age));
 
   // this.venData.push(venus(ageDays));
   // this.marsData.push(mars(ageDays));
