@@ -176,6 +176,11 @@ describe('ageCalc', () => {
     expect(testGlabba.venData).toEqual([105.44]);
   });
 
+  test('should set object merData to [34.53] when run on earth age of 65', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthAge = 65;
+    testGlabba.ageCalc();
+    expect(testGlabba.marsData).toEqual([35.53]);
+  });
 
 });
-
