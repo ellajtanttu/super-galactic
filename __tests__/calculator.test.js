@@ -190,4 +190,11 @@ describe('ageCalc', () => {
     expect(testGlabba.jupData).toEqual([5.48]);
   });
 
+  test('should add merc life exp to mercData [331.82] when earth expectency is 80', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 80;
+    testGlabba.lifeExp();
+    expect(testGlabba.mercData).toEqual([331.82]);
+  });
+
 });
