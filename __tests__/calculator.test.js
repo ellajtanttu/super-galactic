@@ -11,7 +11,7 @@
 
 // expect(monster1.level).toBeDefined();
 
-import {GlabbaData, yrsToDays} from './../src/calculator.js'; // object
+import {GlabbaData, yrsToDays, mercury, venus, mars, jupiter} from './../src/calculator.js'; // object
 
 describe('GlabbaData', () => {
 
@@ -39,7 +39,7 @@ describe('earthLifeExp', () => {
     testGlabba.earthLifeExp();
     expect(testGlabba.earthLE).toEqual(0);
   });
-  
+
   test('should return 67 when run on object with .type === "bloogblag"', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 0;
@@ -122,10 +122,9 @@ describe('yrsToDays', () => {
 
 describe('mercury', () => {
 
-  test('should return 4.15 when run on object with .earthAge === 1', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 1;
-    const mercuryAge = testGlabba.mercury();
+  test('should return 4.15 when run on age of 1', () => {
+    const testAge = 1;
+    const mercuryAge = mercury(testAge);
     expect(mercuryAge).toEqual(4.15);
   });
 
@@ -133,21 +132,19 @@ describe('mercury', () => {
 
 describe('venus', () => {
 
-  test('should return 1.62 when run on object with .earthAge === 1', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 1;
-    const venusAge = testGlabba.venus();
-    expect(venusAge).toEqual(1.62);
+  test('should return 1.62 when run on age of 1', () => {
+    const testAge = 1;
+    const mercuryAge = venus(testAge);
+    expect(mercuryAge).toEqual(1.62);
   });
 
 });
 
 describe('mars', () => {
 
-  test('should return .53 when run on object with .earthAge === 1', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 1;
-    const marsAge = testGlabba.mars();
+  test('should return .53 when run on age of 1', () => {
+    const testAge = 1;
+    const marsAge = mars(testAge);
     expect(marsAge).toEqual(.53);
   });
 
@@ -155,22 +152,21 @@ describe('mars', () => {
 
 describe('jupiter', () => {
 
-  test('should return .08 when run on object with .earthAge === 1', () => {
-    const testGlabba = new GlabbaData();
-    testGlabba.earthAge = 1;
-    const jupAge = testGlabba.jupiter();
+  test('should return .08 when run on age of 1', () => {
+    const testAge = 1;
+    const jupAge = jupiter(testAge);
     expect(jupAge).toEqual(.08);
   });
 
 });
 
-describe('lifeExp', () => {
+describe('ageCalc', () => {
 
-  test('should return mercury life exp of 269.6 when run on object with .earthAge of 65', () => {
+  test('should set object merData to [269.6] when run on earth age of 65', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthAge = 65;
-    const mercLifeExp = testGlabba.lifeExp();
-    expect(mercLifeExp).toEqual(269.60);
+    const mercAge = testGlabba.mercData();
+    expect(mercAge).toEqual([269.60]);
   });
 
 });

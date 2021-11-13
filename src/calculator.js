@@ -8,7 +8,31 @@ export function yrsToDays(number) {
     return number * 365;
   } else {
     return "number not set"
-  } 
+  }
+}
+
+export function mercury(number) {
+  const earthDays = yrsToDays(number);
+  const mercConv = parseFloat(earthDays / 88);
+  return parseFloat(mercConv.toFixed(2));
+}
+
+export function venus(number) {
+  const earthDays = yrsToDays(number);
+  const venusConv = parseFloat(earthDays / 225);
+  return parseFloat(venusConv.toFixed(2));
+}
+
+export function mars(number) {
+  const earthDays = yrsToDays(number);
+  const marsConv = parseFloat(earthDays / 687);
+  return parseFloat(marsConv.toFixed(2));
+}
+
+export function jupiter(number) {
+  const earthDays = yrsToDays(number);
+  const jupConv = parseFloat(earthDays / 4333);
+  return parseFloat(jupConv.toFixed(2));
 }
 
 export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercData, venData, marsData, jupData) {
@@ -50,50 +74,33 @@ GlabbaData.prototype.earthLifeExp = function() {
     calcLifeExp += 18;
   } else {
     calcLifeExp += 0;
-  } 
+  }
 
   return this.earthLE += calcLifeExp;
 }
 
-// GlabbaData.prototype.yrsToDays = function() {
-//   if (this.earthAge > 0) {
-//     return this.earthAge * 365;
-//   } else {
-//     return "age not set"
-//   } 
+GlabbaData.prototype.ageCalc = function () {
+  const ageDays = yrsToDays(this.earthAge);
+  this.mercData.push(mercury(ageDays));
+  // this.venData.push(venus(ageDays));
+  // this.marsData.push(mars(ageDays));
+  // this.jupData.push(jupiter(ageDays));
+}
+
+// prototype.lifeExp = function () {
+//   const lEDays = this.earthLE.yrsToDays();
+//   this.mercData.push(lEDays.mercury)
+//   this.venData.push(lEDays.venus)
+//   this.marsData.push(lEDays.mars)
+//   this.jupData.push(lEDays.jupiter)
 // }
 
-
-GlabbaData.prototype.mercury = function () {
-  const earthDays = yrsToDays(this);
-  const mercConv = parseFloat(earthDays / 88);
-  return parseFloat(mercConv.toFixed(2));
-}
-
-GlabbaData.prototype.venus = function () {
-  const earthDays = this.yrsToDays();
-  const venConv = parseFloat(earthDays / 225);
-  return parseFloat(venConv.toFixed(2));
-}
-
-GlabbaData.prototype.mars = function () {
-  const earthDays = this.yrsToDays();
-  const marsConv = parseFloat(earthDays / 687);
-  return parseFloat(marsConv.toFixed(2));
-}
-
-GlabbaData.prototype.jupiter = function () {
-  const earthDays = this.yrsToDays();
-  const jupConv = parseFloat(earthDays / 4333);
-  return parseFloat(jupConv.toFixed(2));
-}
-
-GlabbaData.prototype.lifeExp = function () {
-  const earthLEYears = this.earthLE
-  const earthLEDays = earthLEYears.yrsToDays();
-  const mercExpectancy = parseFloat(earthLEDays / 88);
-  return parseFloat(mercExpectancy.toFixed(2));
-}
+// GlabbaData.prototype.lifeExp = function () {
+//   const earthLEYears = this.earthLE
+//   const earthLEDays = earthLEYears.yrsToDays();
+//   const mercExpectancy = parseFloat(earthLEDays / 88);
+//   return parseFloat(mercExpectancy.toFixed(2));
+// }
 
 
 // git add __tests__/calculator.test.js src/calculator.js
