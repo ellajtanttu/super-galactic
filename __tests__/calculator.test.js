@@ -198,32 +198,44 @@ describe('ageCalc', () => {
 
 describe('lECalc', () => {
 
-  test('should add merc life exp to mercLE [331.82] when earth expectency is 80', () => {
+  test('should change mercLE to equal years left on mercury, 124.43 at earth age 50 earth exp 80.', () => {
     const testGlabba = new GlabbaData();
+    testGlabba.mercAge = 207.39;
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
-    expect(testGlabba.mercLE).toEqual(331.82);
+    expect(testGlabba.mercLE).toEqual(124.43);
   });
 
-  test('should add venus life exp to venLE [129.78] when earth expectency is 80', () => {
+  test('should change venLE to equal years left on venus, 48.67 at earth age 50 earth exp 80.', () => {
     const testGlabba = new GlabbaData();
+    testGlabba.venAge = 81.11;
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
-    expect(testGlabba.venLE).toEqual(129.78);
+    expect(testGlabba.venLE).toEqual(48.67);
   });
 
-  test('should add mars life exp to marsLE [42.5] when earth expectency is 80', () => {
+  test('should change marsLE to equal years left on mars, 15.93 at earth age 50 earth exp 80.', () => {
     const testGlabba = new GlabbaData();
+    testGlabba.marsAge = 26.57;
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
-    expect(testGlabba.marsLE).toEqual(42.5);
+    expect(testGlabba.marsLE).toEqual(15.93);
   });
 
-  test('should add jupiter life exp to jupLE [6.74] when earth expectency is 80', () => {
+  test('should change venLE to equal years left on venus, 2.53 at earth age 50 earth exp 80.', () => {
     const testGlabba = new GlabbaData();
+    testGlabba.jupAge = 4.21;
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
-    expect(testGlabba.jupLE).toEqual(6.74);
+    expect(testGlabba.jupLE).toEqual(2.53);
+  });
+
+  test('should change mercLE to equal years passed expectancy, -20.75 at earth age 85 earth exp 80.', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.mercAge = 352.56;
+    testGlabba.earthLE = 80;
+    testGlabba.lECalc();
+    expect(testGlabba.mercLE).toEqual(-20.74);
   });
 
 });

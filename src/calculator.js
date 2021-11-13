@@ -96,10 +96,10 @@ GlabbaData.prototype.lECalc = function () {
   this.marsLE = 0;
   this.jupLE = 0;
   const lifeExp = this.earthLE;
-  this.mercLE = (mercury(lifeExp));
-  this.venLE = (venus(lifeExp));
-  this.marsLE = (mars(lifeExp));
-  this.jupLE = (jupiter(lifeExp));
+  this.mercLE = parseFloat((mercury(lifeExp) - this.mercAge).toFixed(2));
+  this.venLE = parseFloat((venus(lifeExp) - this.venAge).toFixed(2));
+  this.marsLE = parseFloat((mars(lifeExp) - this.marsAge).toFixed(2));
+  this.jupLE = parseFloat((jupiter(lifeExp) - this.jupAge).toFixed(2));
 }
 
 //git add __tests__/calculator.test.js
