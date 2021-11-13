@@ -1,8 +1,3 @@
-// export class TestObject {
-//   constructor(number) {
-//     this.number = 3;
-//   }
-// }
 export function yrsToDays(number) {
   if (number > 0) {
     return number * 365;
@@ -35,17 +30,21 @@ export function jupiter(number) {
   return parseFloat(jupConv.toFixed(2));
 }
 
-export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercData, venData, marsData, jupData) {
+export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercAge, venAge, marsAge, jupAge, mercLE, venLE, marsLE, jupLE) {
   this.name = name;
   this.earthAge = earthAge;
   this.type = type;
   this.combs = combs;
   this.diet = diet;
   this.earthLE = earthLE;
-  this.mercData = mercData;
-  this.venData = venData;
-  this.marsData = marsData;
-  this.jupData = jupData;
+  this.mercAge = mercAge;
+  this.venAge = venAge;
+  this.marsAge = marsAge;
+  this.jupAge = jupAge;
+  this.mercLE = mercLE;
+  this.venLE = venLE;
+  this.marsLE = marsLE;
+  this.jupLE = jupLE;
 }
 
 GlabbaData.prototype.earthLifeExp = function() {
@@ -80,35 +79,27 @@ GlabbaData.prototype.earthLifeExp = function() {
 }
 
 GlabbaData.prototype.ageCalc = function () {
+  this.mercAge = 0;
+  this.venAge = 0;
+  this.marsAge = 0;
+  this.jupAge = 0;
   const age = this.earthAge;
-  this.mercData = [];
-  this.venData = [];
-  this.marsData = [];
-  this.jupData = [];
-  this.mercData.push(mercury(age));
-  this.venData.push(venus(age));
-  this.marsData.push(mars(age));
-  this.jupData.push(jupiter(age));
-
-  // this.venData.push(venus(ageDays));
-  // this.marsData.push(mars(ageDays));
-  // this.jupData.push(jupiter(ageDays));
+  this.mercAge = (mercury(age));
+  this.venAge = (venus(age));
+  this.marsAge = (mars(age));
+  this.jupAge = (jupiter(age));
 }
 
-// prototype.lifeExp = function () {
-//   const lEDays = this.earthLE.yrsToDays();
-//   this.mercData.push(lEDays.mercury)
-//   this.venData.push(lEDays.venus)
-//   this.marsData.push(lEDays.mars)
-//   this.jupData.push(lEDays.jupiter)
-// }
-
-// GlabbaData.prototype.lifeExp = function () {
-//   const earthLEYears = this.earthLE
-//   const earthLEDays = earthLEYears.yrsToDays();
-//   const mercExpectancy = parseFloat(earthLEDays / 88);
-//   return parseFloat(mercExpectancy.toFixed(2));
-// }
-
+GlabbaData.prototype.lECalc = function () {
+  this.mercLE = 0;
+  // this.venLE = 0;
+  // this.marsLE = 0;
+  // this.jupLE = 0;
+  const lifeExp = this.earthLE;
+  this.mercLE = (mercury(lifeExp));
+  // this.venLE = (venus(lifeExp));
+  // this.marsLE = (mars(lifeExp));
+  // this.jupLE = (jupiter(lifeExp));
+}
 
 // git add __tests__/calculator.test.js src/calculator.js
