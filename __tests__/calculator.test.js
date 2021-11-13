@@ -198,18 +198,25 @@ describe('ageCalc', () => {
 
 describe('lECalc', () => {
 
-  test('should add merc life exp to mercData [331.82] when earth expectency is 80', () => {
+  test('should add merc life exp to mercLE [331.82] when earth expectency is 80', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
     expect(testGlabba.mercLE).toEqual(331.82);
   });
 
-  test('should add merc life exp to mercData [129.78] when earth expectency is 80', () => {
+  test('should add venus life exp to venLE [129.78] when earth expectency is 80', () => {
     const testGlabba = new GlabbaData();
     testGlabba.earthLE = 80;
     testGlabba.lECalc();
     expect(testGlabba.venLE).toEqual(129.78);
+  });
+
+  test('should add mars life exp to marsLE [42.5] when earth expectency is 80', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 80;
+    testGlabba.lECalc();
+    expect(testGlabba.marsLE).toEqual(42.5);
   });
 
 });
