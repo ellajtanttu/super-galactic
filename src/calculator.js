@@ -93,15 +93,15 @@ GlabbaData.prototype.ageCalc = function () {
 GlabbaData.prototype.lECalc = function () {
   this.mercLE = 0;
   this.venLE = 0;
-  // this.marsLE = 0;
+  this.marsLE = 0;
   // this.jupLE = 0;
   const lifeExp = this.earthLE;
   this.mercLE = (mercury(lifeExp));
   this.venLE = (venus(lifeExp));
-  // this.marsLE = (mars(lifeExp));
+  this.marsLE = (mars(lifeExp));
   // this.jupLE = (jupiter(lifeExp));
 }
 
-// __tests__/calculator.test.js
+//git add __tests__/calculator.test.js
 
-// src/calculator.js
+// git add src/calculator.js
