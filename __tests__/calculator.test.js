@@ -219,4 +219,11 @@ describe('lECalc', () => {
     expect(testGlabba.marsLE).toEqual(42.5);
   });
 
+  test('should add jupiter life exp to jupLE [6.74] when earth expectency is 80', () => {
+    const testGlabba = new GlabbaData();
+    testGlabba.earthLE = 80;
+    testGlabba.lECalc();
+    expect(testGlabba.jupLE).toEqual(6.74);
+  });
+
 });
