@@ -30,6 +30,7 @@ export function jupiter(number) {
   return parseFloat(jupConv.toFixed(2));
 }
 
+
 export function GlabbaData(name, earthAge, type, combs, diet, earthLE, mercAge, venAge, marsAge, jupAge, mercLE, venLE, marsLE, jupLE, over) {
   this.name = name;
   this.earthAge = earthAge;
@@ -107,9 +108,10 @@ GlabbaData.prototype.lECalc = function () {
 GlabbaData.prototype.negative = function() {
   if (this.mercLE < 0) {
     this.over = true;
-    return Math.abs(this.mercLE);
+    return this.mercLE *= -1;
   }
 }
+
 
 //git add __tests__/calculator.test.js
 

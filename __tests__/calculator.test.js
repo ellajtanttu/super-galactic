@@ -242,6 +242,17 @@ describe('lECalc', () => {
 
 });
 
+describe('wholeNumber', () => {
+
+  test('should change .over to true when the mercLE life expectency has been met.', () => {
+    let testGlabba = new GlabbaData();
+    testGlabba.mercLE = -20.74;
+    testGlabba.negative();
+    expect(testGlabba.over).toEqual(true);
+  });
+
+})
+
 describe('negative', () => {
 
   test('should change .over to true when the mercLE life expectency has been met.', () => {
@@ -249,6 +260,13 @@ describe('negative', () => {
     testGlabba.mercLE = -20.74;
     testGlabba.negative();
     expect(testGlabba.over).toEqual(true);
-
   });
+
+  test('should change negative value to positive for mercLE', () => {
+    let testGlabba = new GlabbaData();
+    testGlabba.mercLE = -20.74;
+    testGlabba.negative();
+    expect(testGlabba.mercLE).toEqual(20.74);
+  });
+
 });
