@@ -3,7 +3,7 @@
 #### Find out your age and life expectency in Mercury, Venus, Mars, and Jupiter years!
 ---
 #### By
-* _**Ella Tanttu**_
+_**Ella Tanttu**_
 
 ## Technologies Used
 
@@ -18,10 +18,8 @@
 
 ## Description
 
-_ADD UPON COMPLETION_
+_A business logic javascript application that offers all of the classes and functions necessary to calculate ones age and life expectency on Earth, Mercury, Venus, Mars, and Jupiter. If user has lived beyond their life expectency, the logic will return the number of years past the expected amount in a positive number._
 
-## View Live Application on GH-Pages
-_PLACE LINK TO LIVE SITE HERE_
 
 ## Setup & Installation Instructions
 
@@ -133,7 +131,7 @@ herbivore - (+18)
 
 ## Pseudocode
 
-      function earthLE() {
+      <!-- function earthLE() {
             let lifeExp = 0;
             if (type === bloogblag) {
                   life exp += 67
@@ -155,15 +153,15 @@ herbivore - (+18)
                   lifeExp += 18;
             }
             return lifeExp;
-      }
+      } -->
 
-      prototype.yrsToDays = function () {
+      <!-- prototype.yrsToDays = function () {
             this.age *= 365
-      }
+      } -->
 
-      dayAge = object.age.yrsToDays();
+      UI - dayAge = object.age.yrsToDays();
 
-      prototype.mercury = function () {
+      <!-- prototype.mercury = function () {
             mercConv = day.age / 88
             return mercConv
       }
@@ -180,7 +178,7 @@ herbivore - (+18)
 
       prototype.jupiter = function () {
             jupConv = day.age / 4333
-            return jupConv
+            return jupConv -->
       }
       prototype.ageCalc = function () {
             const ageDays = this.earthAge.yrsToDays();
